@@ -9,13 +9,15 @@ import (
 	"os/signal"
 	"time"
 
-	_ "github.com/go-sql-driver/mysql"
 	"taskflow/backend/internal/config"
 	"taskflow/backend/internal/handlers"
 	"taskflow/backend/internal/repository"
 	"taskflow/backend/internal/router"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
+// main func
 func main() {
 	cfg := config.Load()
 	db, err := sql.Open("mysql", cfg.DatabaseURL)

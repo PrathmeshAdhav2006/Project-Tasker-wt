@@ -19,6 +19,7 @@ import (
 
 // main func
 func main() {
+	// Load configuration and connect to the database
 	cfg := config.Load()
 	db, err := sql.Open("mysql", cfg.DatabaseURL)
 	if err != nil {
